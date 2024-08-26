@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Your other CSS rules follow */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+*/
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Styling the navigation links */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 50px;  /* Makes the borders circular */
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition for hover effects */
+}
+
+/* Add hover effect */
+nav ul li a:hover {
+    background-color: #fff;
+    color: #333;  /* Change text color when hovering */
+}
+/* Style the social media icons */
+#social-media a img {
+    transition: transform 0.3s ease;
+}
+
+/* Adding a hover effect */
+#social-media a:hover img {
+    transform: scale(1.1);  /* Slightly enlarge the icon on hover */
+}
+
+/* contact page formatting */
+.contact-page p {
+    font-size: 28px;  /* Adjust the size to your preference */
+}
+/* Add space between sections */
+.contact-page section {
+    margin-top: 40px;  /* Adjust the size to your preference */
+    margin-bottom: 40px;  /* Optional: Adds space below each section */
+}
+
+/* Add space above and below headers inside sections */
+.contact-page h2 {
+    margin-top: 20px;  /* Space above the header */
+    margin-bottom: 20px;  /* Space below the header */
+}
+
+/* Add space below the header inside the header section */
+.contact-page header {
+    margin-bottom: 40px;
+}
+
+/* Optional: Add space above the footer */
+.contact-page footer {
+    margin-top: 40px;
+}
+
+
+
+
+
+
+/* Apply the background to the entire body */
+/* Apply the background image and overlay to the content area only */
+.contact-page {
+    background-color: transparent; /* Ensure the background starts as transparent */
+    padding-top: 0px; /* Adjust this to match the height of your header */
+    padding-bottom: 0px; /* Add padding to prevent overflow beyond footer */
+    position: relative;
+}
+
+.contact-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/img5.jpeg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Adjust the transparency as needed */
+    z-index: -1;
+}
+
+/* Ensure content and footer are positioned correctly */
+body.contact-page > *:not(header) {
+    position: relative;
+    z-index: 2;
+    padding: 20px; /* Adds padding to all sections */
+}
+
