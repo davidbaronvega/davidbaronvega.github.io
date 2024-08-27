@@ -1,19 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Your other CSS rules follow */
+
 
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/*
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-*/
 
 header {
     background-color: #333;
@@ -59,57 +51,53 @@ nav ul li a {
     padding: 10px 15px;
     border: 2px solid #fff;
     border-radius: 50px;  /* Makes the borders circular */
-    transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition for hover effects */
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition - hover effects */
 }
 
-/* Add hover effect */
+/* hover effect */
 nav ul li a:hover {
     background-color: #fff;
-    color: #333;  /* Change text color when hovering */
+    color: #333;  /* Changing text color when hovering */
 }
-/* Style the social media icons */
+/* social media icons styling */
 #social-media a img {
     transition: transform 0.3s ease;
 }
 
-/* Adding a hover effect */
+/* hover effect - sm links */
 #social-media a:hover img {
-    transform: scale(1.1);  /* Slightly enlarge the icon on hover */
+    transform: scale(1.25);  /* Enlarge the icon on hover */
 }
 
 /* contact page formatting */
 .contact-page p {
-    font-size: 28px;  /* Adjust the size to your preference */
+    font-size: 28px;  
 }
-/* Add space between sections */
+/* Adding space between sections */
 .contact-page section {
-    margin-top: 40px;  /* Adjust the size to your preference */
-    margin-bottom: 40px;  /* Optional: Adds space below each section */
+    margin-top: 40px;  
+    margin-bottom: 40px;
 }
 
 /* Add space above and below headers inside sections */
 .contact-page h2 {
-    margin-top: 20px;  /* Space above the header */
-    margin-bottom: 20px;  /* Space below the header */
+    margin-top: 20px;  
+    margin-bottom: 20px;  
 }
 
-/* Add space below the header inside the header section */
+/* Adding space below the header inside the header section */
 .contact-page header {
     margin-bottom: 40px;
 }
 
-/* Optional: Add space above the footer */
+/* Adding space above the footer */
 .contact-page footer {
     margin-top: 40px;
 }
 
 
 
-
-
-
-/* Apply the background to the entire body */
-/* Apply the background image and overlay to the content area only */
+/* Applying the background image and overlay to the content area only */
 .contact-page {
     background-color: transparent; /* Ensure the background starts as transparent */
     padding-top: 0px; /* Adjust this to match the height of your header */
@@ -124,18 +112,74 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('images/img5.jpeg'); /* Your background image */
+    background-image: url('images/img5.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5; /* Adjust the transparency as needed */
+    opacity: 0.5; /* transparency */
     z-index: -1;
 }
 
-/* Ensure content and footer are positioned correctly */
+/* Ensuring content and footer are positioned correctly */
 body.contact-page > *:not(header) {
     position: relative;
     z-index: 2;
-    padding: 20px; /* Adds padding to all sections */
+    padding: 20px; /* padding to all sections */
 }
 
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    /* Show the menu icon on mobile */
+    .menu-icon {
+        display: block;
+    }
+
+
+    
+    /* Hiding the nav menu by default: OFF */
+    /*
+    #main-nav {
+        display: none;
+    }
+    */
+
+    /* Showing the nav menu when toggled */
+    #main-nav.active {
+        display: block;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    /* Styling the menu items */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 15px; /* space between buttons */
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        padding: 8px 15px;  /* padding */
+        font-size: 14px;  /* font size */
+        border-radius: 20px;  /* Slightly reducing the border radius */
+    }
+
+    header h1 {
+        font-size: 24px; /* Reducing header font size for smaller screens */
+    }
+
+    section {
+        padding: 15px 10px; /* Reducing padding in sections for smaller screens */
+    }
+    
+    /* Adjust the footer */
+    footer {
+        position: relative; /* Removing the fixed position on small screens */
+        padding: 20px 0;
+    }
+}
