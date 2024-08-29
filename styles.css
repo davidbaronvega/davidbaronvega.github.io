@@ -97,6 +97,37 @@ nav ul li a:hover {
 
 
 
+/* Applying the background image and overlay to the resume page */
+.resume-page {
+    background-color: transparent; 
+    padding-top: 0px; 
+    padding-bottom: 0px; 
+    position: relative;
+}
+
+.resume-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/img3.jpeg'); /* Double check the path pls */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* transparency */
+    z-index: -1;
+}
+
+/* Ensuring content and footer are positioned correctly */
+body.resume-page > *:not(header) {
+    position: relative;
+    z-index: 2;
+    padding: 20px; 
+}
+
+
 /* Applying the background image and overlay to the content area only */
 .contact-page {
     background-color: transparent; /* Ensure the background starts as transparent */
@@ -182,4 +213,33 @@ body.contact-page > *:not(header) {
         position: relative; /* Removing the fixed position on small screens */
         padding: 20px 0;
     }
+}
+
+/* Resume Page Styling */
+
+/* Centering buttons container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Styling the buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
 }
