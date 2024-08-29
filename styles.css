@@ -97,13 +97,40 @@ nav ul li a:hover {
 
 
 
-/* Applying the background image and overlay to the resume page */
-.resume-page {
-    background-color: transparent; 
-    padding-top: 0px; 
-    padding-bottom: 0px; 
-    position: relative;
+/* Apply Flexbox to the body to manage layout */
+body.resume-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes up the full height of the viewport */
+    margin: 0; /* Remove any default margin */
 }
+
+/* Make sure the content area expands to push the footer down */
+body.resume-page > main {
+    flex: 1; /* Allows the content to take up available space */
+}
+
+.note {
+    font-size: 14px;
+    color: #fff; /* Subtle color to differentiate from main text */
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 20px; /* Padding to give some space on smaller screens */
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0; /* Keep padding minimal to avoid large footer */
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+    height: auto; /* Footer height adjusts based on content */
+    flex-shrink: 0; /* Prevent the footer from shrinking or growing */
+    font-size: 14px; /* Adjust font size if needed */
+}
+
 
 .resume-page::before {
     content: "";
@@ -165,6 +192,18 @@ body.contact-page > *:not(header) {
         display: block;
     }
 
+    /* Adjust email text size for mobile */
+    .contact-page p {
+        font-size: 14px; /* Reduce the font size for better fit */
+        line-height: 1.4; /* Adjust line height to maintain readability */
+        word-wrap: break-word; /* Ensure long text (like emails) wraps correctly */
+    }
+
+    /* Optionally reduce padding */
+    body.contact-page > *:not(header) {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+}
 
     
     /* Hiding the nav menu by default: OFF */
@@ -213,7 +252,7 @@ body.contact-page > *:not(header) {
         position: relative; /* Removing the fixed position on small screens */
         padding: 20px 0;
     }
-}
+
 
 /* Resume Page Styling */
 
