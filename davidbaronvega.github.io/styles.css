@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+header {
+    background-color: #4a5d73;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px;
+}
+
+footer {
+    background-color: #4a5d73;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Styling the navigation links */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 50px;  /* Makes the borders circular */
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition - hover effects */
+}
+
+/* hover effect */
+nav ul li a:hover {
+    background-color: #fff;
+    color: #333;  /* Changing text color when hovering */
+}
+/* social media icons styling */
+#social-media a img {
+    transition: transform 0.3s ease;
+}
+
+/* hover effect - sm links */
+#social-media a:hover img {
+    transform: scale(1.25);  /* Enlarge the icon on hover */
+}
+
+/* contact page formatting */
+.contact-page p {
+    font-size: 28px;  
+}
+/* Adding space between sections */
+.contact-page section {
+    margin-top: 40px;  
+    margin-bottom: 40px;
+}
+
+/* Add space above and below headers inside sections */
+.contact-page h2 {
+    margin-top: 20px;  
+    margin-bottom: 20px;  
+}
+
+/* Adding space below the header inside the header section */
+.contact-page header {
+    margin-bottom: 40px;
+}
+
+/* Adding space above the footer */
+.contact-page footer {
+    margin-top: 40px;
+}
+
+
+/* About Me Section */
+/* About Me Section */
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Style the profile picture */
+.profile-pic {
+    max-width: 20%; /* Ensure the image takes up no more than 1/4 or 1/5 of the page */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-left: auto; /* Aligns the image to the right */
+}
+
+/* Style the text in the About Me section */
+.about-text {
+    flex: 1; /* Takes up the remaining space */
+    margin-right: 20px; /* Adds some space between text and image */
+    max-width: 75%; /* Limits the text width */
+}
+
+@media screen and (max-width: 768px) {
+    /* On smaller screens, stack the image above the text */
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        max-width: 50%; /* Make the image larger on mobile devices */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center; /* Center the text on mobile devices */
+    }
+}
+
+
+
+
+/* Apply Flexbox to the body to manage layout */
+body.resume-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes up the full height of the viewport */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Make sure the content area expands to push the footer down */
+body.resume-page > main {
+    flex: 1; /* Allows the content to take up available space */
+}
+
+.note {
+    font-size: 14px;
+    color: #fff; /* Subtle color to differentiate from main text */
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 20px; /* Padding to give some space on smaller screens */
+}
+
+/* Footer styles */
+footer {
+    background-color: #4a5d73;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0; /* Keep padding minimal to avoid large footer */
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+    height: auto; /* Footer height adjusts based on content */
+    flex-shrink: 0; /* Prevent the footer from shrinking or growing */
+    font-size: 14px; /* Adjust font size if needed */
+}
+
+
+.resume-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/img3.jpeg'); /* Double check the path pls */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* transparency */
+    z-index: -1;
+}
+
+/* Ensuring content and footer are positioned correctly */
+body.resume-page > *:not(header) {
+    position: relative;
+    z-index: 2;
+    padding: 20px; 
+}
+
+
+/* Applying the background image and overlay to the content area only */
+.contact-page {
+    background-color: transparent; /* Ensure the background starts as transparent */
+    padding-top: 0px; /* Adjust this to match the height of your header */
+    padding-bottom: 0px; /* Add padding to prevent overflow beyond footer */
+    position: relative;
+}
+
+.contact-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/img5.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* transparency */
+    z-index: -1;
+}
+
+/* Ensuring content and footer are positioned correctly */
+body.contact-page > *:not(header) {
+    position: relative;
+    z-index: 2;
+    padding: 20px; /* padding to all sections */
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    /* Show the menu icon on mobile */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Adjust email text size for mobile */
+    .contact-page p {
+        font-size: 14px; /* Reduce the font size for better fit */
+        line-height: 1.4; /* Adjust line height to maintain readability */
+        word-wrap: break-word; /* Ensure long text (like emails) wraps correctly */
+    }
+
+    /* Optionally reduce padding */
+    body.contact-page > *:not(header) {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+}
+
+    
+    /* Hiding the nav menu by default: OFF */
+    /*
+    #main-nav {
+        display: none;
+    }
+    */
+
+    /* Showing the nav menu when toggled */
+    #main-nav.active {
+        display: block;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    /* Styling the menu items */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 15px; /* space between buttons */
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        padding: 8px 15px;  /* padding */
+        font-size: 14px;  /* font size */
+        border-radius: 20px;  /* Slightly reducing the border radius */
+    }
+
+    header h1 {
+        font-size: 24px; /* Reducing header font size for smaller screens */
+    }
+
+    section {
+        padding: 15px 10px; /* Reducing padding in sections for smaller screens */
+    }
+    
+    /* Adjust the footer */
+    footer {
+        position: relative; /* Removing the fixed position on small screens */
+        padding: 20px 0;
+    }
+
+
+
+
+
+/* Resume Page Styling */
+
+/* Centering buttons container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Styling the buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Projects Page Design */
+
+/* Apply Flexbox to the body to manage layout for the projects page */
+body.projects-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes up the full height of the viewport */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Make sure the content area expands to push the footer down */
+body.projects-page > main {
+    flex: 1; /* Allows the content to take up available space */
+}
+
+/* Background image for the projects page */
+.projects-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/img2.jpeg'); /* Replace with your desired background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Transparency */
+    z-index: -1;
+}
+
+/* Ensuring content and footer are positioned correctly on the projects page */
+body.projects-page > *:not(header) {
+    position: relative;
+    z-index: 2;
+    padding: 20px; 
+}
