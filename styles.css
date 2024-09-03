@@ -8,7 +8,7 @@ body {
 
 
 header {
-    background-color: #333;
+    background-color: #4a5d73;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -34,7 +34,7 @@ section {
 }
 
 footer {
-    background-color: #333;
+    background-color: #4a5d73;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -96,6 +96,51 @@ nav ul li a:hover {
 }
 
 
+/* About Me Section */
+/* About Me Section */
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Style the profile picture */
+.profile-pic {
+    max-width: 20%; /* Ensure the image takes up no more than 1/4 or 1/5 of the page */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-left: auto; /* Aligns the image to the right */
+}
+
+/* Style the text in the About Me section */
+.about-text {
+    flex: 1; /* Takes up the remaining space */
+    margin-right: 20px; /* Adds some space between text and image */
+    max-width: 75%; /* Limits the text width */
+}
+
+@media screen and (max-width: 768px) {
+    /* On smaller screens, stack the image above the text */
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        max-width: 50%; /* Make the image larger on mobile devices */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center; /* Center the text on mobile devices */
+    }
+}
+
+
+
 
 /* Apply Flexbox to the body to manage layout */
 body.resume-page {
@@ -120,7 +165,7 @@ body.resume-page > main {
 
 /* Footer styles */
 footer {
-    background-color: #333;
+    background-color: #4a5d73;
     color: #fff;
     text-align: center;
     padding: 10px 0; /* Keep padding minimal to avoid large footer */
@@ -254,6 +299,9 @@ body.contact-page > *:not(header) {
     }
 
 
+
+
+
 /* Resume Page Styling */
 
 /* Centering buttons container */
@@ -281,4 +329,42 @@ body.contact-page > *:not(header) {
 .btn:hover {
     background-color: #555;
     transform: scale(1.05);
+}
+
+/* Projects Page Design */
+
+/* Apply Flexbox to the body to manage layout for the projects page */
+body.projects-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes up the full height of the viewport */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Make sure the content area expands to push the footer down */
+body.projects-page > main {
+    flex: 1; /* Allows the content to take up available space */
+}
+
+/* Background image for the projects page */
+.projects-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/img2.jpeg'); /* Replace with your desired background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Transparency */
+    z-index: -1;
+}
+
+/* Ensuring content and footer are positioned correctly on the projects page */
+body.projects-page > *:not(header) {
+    position: relative;
+    z-index: 2;
+    padding: 20px; 
 }
