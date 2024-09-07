@@ -368,3 +368,12 @@ body.projects-page > *:not(header) {
     z-index: 2;
     padding: 20px; 
 }
+/* Improving the orientation of the footer for mobile screens */
+
+@media screen and (max-width: 768px) {
+    footer {
+        position: relative;
+        margin-top: 20px;
+        padding: 20px 0;
+    }
+}
