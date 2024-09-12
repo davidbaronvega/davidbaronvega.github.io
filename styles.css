@@ -155,12 +155,17 @@ body.resume-page > main {
     flex: 1; /* Allows the content to take up available space */
 }
 
+/* Styling the "Please note" text to look like a button */
 .note {
-    font-size: 14px;
-    color: #fff; /* Subtle color to differentiate from main text */
-    text-align: center;
-    margin-top: 10px;
-    padding: 0 20px; /* Padding to give some space on smaller screens */
+    background-color: #f9f9f9; /* Light background color */
+    border: 2px solid #007acc; /* Border to match the buttons */
+    color: #333; /* Text color */
+    padding: 15px 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Space above the note */
+    font-size: 14px; /* Font size */
+    text-align: center; /* Center align the text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 /* Footer styles */
@@ -339,41 +344,109 @@ body.projects-page {
     flex-direction: column;
     min-height: 100vh; /* Ensure the page takes up the full height of the viewport */
     margin: 0; /* Remove any default margin */
+    background-color: #f0f0f5; /* Replace the background image with a light grey-blue color */
 }
 
-/* Make sure the content area expands to push the footer down */
+/* Ensure the content area expands to push the footer down */
 body.projects-page > main {
     flex: 1; /* Allows the content to take up available space */
-}
-
-/* Background image for the projects page */
-.projects-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('images/img2.jpeg'); /* Replace with your desired background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5; /* Transparency */
-    z-index: -1;
 }
 
 /* Ensuring content and footer are positioned correctly on the projects page */
 body.projects-page > *:not(header) {
     position: relative;
     z-index: 2;
-    padding: 20px; 
+    padding: 20px;
 }
-/* Improving the orientation of the footer for mobile screens */
 
+/* Increase font size for "Projects from 202x" */
+#projects-list h2 {
+    font-size: 28px; /* Adjust font size for year headers */
+    font-weight: bold; /* Make it bold to stand out */
+    margin-bottom: 20px; /* Add some spacing */
+}
+
+/* Increase font size for project titles */
+.project h3 {
+    font-size: 22px; /* Larger font size for project titles */
+    font-weight: bold; /* Make them bold as well */
+    margin-bottom: 10px; /* Space between title and description */
+}
+
+/* Add spacing between project sections */
+.project {
+    margin-bottom: 40px; /* Adds space between projects */
+    padding: 20px;
+    background-color: #fff; /* Optionally add a light background for each project */
+    border-radius: 10px; /* Slight rounding of corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+/* Styling the tags */
+.project .tags span {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Styling project links */
+.project-links a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.project-links a:hover {
+    background-color: #005f99;
+}
+
+/* Adjust text sizes for better readability */
+.project p {
+    font-size: 16px; /* Adjust description font size */
+    line-height: 1.6; /* Make sure there's enough line height for readability */
+}
+
+/* Mobile responsiveness */
 @media screen and (max-width: 768px) {
     footer {
         position: relative;
         margin-top: 20px;
         padding: 20px 0;
     }
+
+    /* Smaller font for mobile screens */
+    #projects-list h2 {
+        font-size: 24px;
+    }
+
+    .project h3 {
+        font-size: 20px;
+    }
+
+    .project p {
+        font-size: 14px;
+    }
+}
+
+/* Style for clickable email links */
+a[href^="mailto:"] {
+    color: #007acc;
+    text-decoration: none;
+    border-bottom: 2px solid #007acc;
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a[href^="mailto:"]:hover {
+    color: #005f99;
+    border-color: #005f99;
 }
